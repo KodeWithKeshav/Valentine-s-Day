@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <meta charset="UTF-8">
+    <meta name="Author" content="Keshav S">
+    <head>
+        <title>Valentine Page!!</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: RGB(255, 228, 196);
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                flex-direction: column;
+            }
+            
+            .container {
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+                color: crimson;
+            }
+            
+            .buttons {
+                margin-top: 20px;
+            }
+            
+            .yes {
+                font-size: 1.5em;
+                padding: 10px 20px;
+                margin-right: 10px;
+                background-color: RGB(0,240,0);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .yes:hover{
+                background-color: darkgreen;
+            }
+            .no:hover{
+                background-color: darkred;
+            }
+            
+            .no {
+                font-size: 1.5em;
+                padding: 10px 20px;
+                background-color: red;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            
+            .gif_container img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+     </style>
+        <script>
+            const messages = [
+    "Are you absolutely, 100%, no-doubt-in-your-mind sure?",
+    "Like, really really really sure???",
+    "I’ll cry if you say no... just saying. 😢?",
+    "Think about the consequences of your decision... 👀",
+    "If you say no, I might just disappear into the void... 🌀",
+    "If you say no, I will be really sad...",
+    "I will be very sad...",
+    "I will be very very very sad...",
+    "Okay, I promise I’m done now...",
+    "Just kidding, say yes please! ❤️"
+    ];
+
+    let messageIndex = 0;
+
+    function noClick() {
+        const noButton = document.querySelector('.no');
+        const yesButton = document.querySelector('.yes');
+        noButton.textContent = messages[messageIndex];
+        messageIndex = (messageIndex + 1) % messages.length;
+        const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+        yesButton.style.fontSize = `${currentSize * 1.5}px`;
+    }
+
+    function yesClick() {
+        window.location.href = "yes.html";
+    }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Will you be my Valentine?</h1>
+            <div class="buttons">
+                <button class="yes" onclick="yesClick()">Yes</button>
+                <button class="no" onclick="noClick()">No</button>
+            </div>
+            <div class="gif_container">
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExemszM3A1eWs3ZmJsc2F3eXRzanB6cjdxN3dwemI4d3Q5d2k4OHIyaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/AQmRoVFBa1DDQeXprE/giphy.gif" alt="GIF">
+            </div>
+        </div>
+    </body>
+</html>
